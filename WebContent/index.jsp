@@ -22,7 +22,7 @@
 	              	</span>
 	            	<a href="IndexServlet?action=logout">Logout</a>
 	            </c:if>
-			    <form method="get" action="SucheFormServlet">
+			    <form method="post" action="SucheFormServlet">
 			        <input type="text" name="suche" placeholder="Suchanfrage">
 			        <input type="submit" value="Suchen!">
 			    </form>

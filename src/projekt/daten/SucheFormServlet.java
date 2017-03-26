@@ -103,7 +103,7 @@ public class SucheFormServlet extends HttpServlet {
 			ResultSet srs = suchStatement.executeQuery();
 			
 			ArrayList<String[]> results = new ArrayList<String[]>();
-			
+			System.out.println(suche);
 			while (srs.next()) {
 				// Für jedes next() wird das Ergebnis zwischengespeichert
 				String[] s = { srs.getString(1), srs.getString(2), srs.getString(3), };
