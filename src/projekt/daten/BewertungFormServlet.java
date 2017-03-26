@@ -1,3 +1,5 @@
+// -- @author Tobias Brakel --
+
 package projekt.daten;
 
 import java.io.IOException;
@@ -37,10 +39,16 @@ public class BewertungFormServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		String username = (String) session.getAttribute("name");
-
-		PrintWriter writer = response.getWriter();
-		writer.write(username);
+		String username = (String)session.getAttribute("name") != null ? (String)session.getAttribute("name") : null;
+		 
+		//Wenn keine Session vorhanden, dann verweise auf login.jsp
+		 if(username == null) {
+			 response.sendRedirect("login.jsp");
+			 return;
+		 } else {
+			 PrintWriter writer = response.getWriter();
+			 writer.write(username);
+		 }
 
 		// Artikelname vom zu bewertendem Artikel
 		String artikelName = request.getParameter("bewertung");
@@ -60,7 +68,6 @@ public class BewertungFormServlet extends HttpServlet {
 		Connection connection = DatabaseConnection.getConnection();
 
 		try {
-			System.out.println("Bewertung:" +artikelName);
 			//Statement zum Beziehen der Artikel_ID
 			PreparedStatement artikelStatement = connection.prepareStatement(artikelQuery);
 			artikelStatement.setString(1, artikelName);
@@ -119,8 +126,8 @@ public class BewertungFormServlet extends HttpServlet {
 				eintragStatement.setInt(2, ars.getInt(1));
 				eintragStatement.setInt(3, nrs.getInt(1));
 				eintragStatement.executeUpdate();
+				System.out.println("im while");
 			}
-			
 			response.sendRedirect("seite1.jsp");
 			connection.close();
 			

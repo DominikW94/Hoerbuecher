@@ -18,7 +18,7 @@
 			<div class="right">
 				<c:if test="${sessionScope.name != null}">
 					<span>
-	              	<a href=warenkorb.jsp>Warenkorb</a>
+	              	<a href=WarenFormServlet>Warenkorb</a>
 	              	</span>
 	            	<a href="IndexServlet?action=logout">Logout</a>
 	            </c:if>

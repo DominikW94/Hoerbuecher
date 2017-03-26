@@ -1,3 +1,5 @@
+/* -- @author Jan Schaffland -- */
+
 @CHARSET "ISO-8859-1";
 
 a 		{color: green;
@@ -12,14 +14,15 @@ a#not:hover, a#act:hover, a:hover
 		{text-decoration: underline;}
 
 footer {
-	position: fixed;
+	position: static;
 	bottom: 0;
 	height: 50px;
 	text-align: center;
 	width: 100%;}
 	
 body {
-	background-image: url(bilder/hoerbuch.jpg);
+	background-image: url(bilder/bild12.png);
+	background-size:120% 100%;
 	background-repeat: no-repeat;
 	background-position: top;}
 

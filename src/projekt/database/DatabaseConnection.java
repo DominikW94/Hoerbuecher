@@ -1,3 +1,5 @@
+// -- @author Jan Schaffland --
+
 package projekt.database;
 
 import java.sql.Connection;

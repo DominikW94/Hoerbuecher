@@ -1,3 +1,5 @@
+// -- @author Jan Schaffland --
+
 package projekt.daten;
 
 import java.io.IOException;
@@ -79,7 +81,7 @@ public class BearbeitungFormServlet extends HttpServlet {
 		//Nutzer mit eingegebener ID wird gelöscht
 		String loeschQuery = "DELETE FROM nutzer WHERE kunden_id = ?";
 		//Rolle eines Nutzers wird von Kunde zum Admin geändert
-		String bearbeitQuery = "UPDATE nutzer SET rolle = '?' WHERE kunden_id = ?";
+		String bearbeitQuery = "UPDATE nutzer SET rolle = 'Admin' WHERE kunden_id = ?";
 		
 		int loesch_id;
 		int kunden_id;

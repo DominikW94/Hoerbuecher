@@ -5,11 +5,11 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<meta name="author"  content="Tobias Brakel">
+	<meta name="author"  content="Jan Schaffland">
 <title>Mitgliedsliste</title>
 </head>
 <body>
-	<a href="indexAdmin.jsp">zurück</a>
+	<a href="index.jsp">zurück</a>
 <br>
 <br>
 	<form method="get" action="BearbeitungFormServlet">

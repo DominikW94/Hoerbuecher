@@ -16,7 +16,7 @@
 	<span>
 		<a id="not" href="WarenFormServlet">Warenkorb</a>
 	</span>
-		<a id="not" href="">Logout</a>
+		<a id="not" href="IndexServlet?action=logout">Logout</a>
 </div>
 <div align="left">
 	<span>

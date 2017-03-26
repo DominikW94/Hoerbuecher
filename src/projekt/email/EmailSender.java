@@ -1,3 +1,5 @@
+// -- @author Jan Schaffland --
+
 package projekt.email;
 
 import java.util.ArrayList;

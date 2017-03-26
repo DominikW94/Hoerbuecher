@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Impressum</title>
-	
+	<meta name="author"  content="Tobias Brakel">
 	<link href="indexStyle.css" type="text/css" rel="stylesheet">
 </head>
 <body>

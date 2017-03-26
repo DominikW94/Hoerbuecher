@@ -1,3 +1,5 @@
+// -- @author Jan Schaffland --
+
 package projekt.daten;
 
 import java.io.IOException;

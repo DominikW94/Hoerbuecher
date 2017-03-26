@@ -1,3 +1,5 @@
+// -- @author Tobias Brakel --
+
 package projekt.daten;
 
 import java.io.IOException;

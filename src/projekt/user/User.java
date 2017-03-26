@@ -1,3 +1,5 @@
+// -- @author Jan Schaffland --
+
 package projekt.user;
 
 
@@ -22,13 +24,6 @@ public class User {
 		this.email = email;
 	}
 	
-	//Konstruktor zum Anmelden und überprüfen bzw. einholen der Daten eines nutzers
-	public User(String nutzername, String passwort) {
-		super();
-		this.nutzername  = nutzername;
-		this.passwort = passwort;
-	}
-
 	//Getter und Setter der Klassenvariablen
 	public String getVorname() {
 		return vorname;

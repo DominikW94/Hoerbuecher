@@ -1,3 +1,5 @@
+// -- @author Tobias Brakel --
+
 package projekt.daten;
 
 import java.io.IOException;
@@ -37,10 +39,16 @@ public class WarenFormServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		 HttpSession session = request.getSession();
-		 String username = (String)session.getAttribute("name");
-		    
-		 PrintWriter writer = response.getWriter();
-		 writer.write(username);
+		 String username = (String)session.getAttribute("name") != null ? (String)session.getAttribute("name") : null;
+		 
+		//Wenn keine Session vorhanden, dann verweise auf login.jsp
+		 if(username == null) {
+			 response.sendRedirect("login.jsp");
+			 return;
+		 } else {
+			 PrintWriter writer = response.getWriter();
+			 writer.write(username);
+		 }
 		
 		//Query um die ID des Kunden zu ermitteln
 		String idQuery = "SELECT kunden_id FROM nutzer WHERE nick ILIKE ?";

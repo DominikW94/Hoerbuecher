@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="Beschreibung" content="Ausgabe wenn versuchter Login oder Registierung erfolgreich">
-	<meta name="author" content="Tobias Brakel">
+	<meta name="author" content="Jan Schaffland">
 	<title>Erfolgreich</title>
 </head>
 <body>
@@ -20,6 +20,6 @@ Alter: 		<b>${user.alter }		</b><br>
 <br>
 <br>
 <br>
-<a href="indexAnmeldung.jsp">Weiter</a>
+<a href="index.jsp">Weiter</a>
 </body>
 </html>

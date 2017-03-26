@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<meta name="author" content="Tobias Brakel">
+	<meta name="author" content="Jan Schaffland">
 	<title>Warenkorb</title>
 </head>
 <body>

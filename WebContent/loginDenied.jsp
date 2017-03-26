@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="Beschreibung" content="Ausgabe wenn versuchter Login oder Registierung fehlgeschlagen">
-	<meta name="author" content="Tobias Brakel">
+	<meta name="author" content="Jan Schaffland">
 	<title>Fehlgeschlagen</title>
 </head>
 <body>

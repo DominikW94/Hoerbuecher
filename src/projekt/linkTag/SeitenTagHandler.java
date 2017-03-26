@@ -1,3 +1,5 @@
+// -- @author Tobias Brakel --
+
 package projekt.linkTag;
 
 import javax.servlet.jsp.JspException;

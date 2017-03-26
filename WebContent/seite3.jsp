@@ -13,9 +13,9 @@
 
 <div align="right">
 	<span>
-		<a href="warenkorb.jsp">Warenkorb</a>
+		<a id="not" href="WarenFormServlet">Warenkorb</a>
 	</span>
-		<a href="">Logout</a>
+		<a id="not" href="IndexServlet?action=logout">Logout</a>
 </div>
 <div align="left">
 	<span>

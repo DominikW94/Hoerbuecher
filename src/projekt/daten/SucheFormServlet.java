@@ -1,3 +1,5 @@
+// -- @author Tobias Brakel --
+
 package projekt.daten;
 
 import java.io.IOException;
@@ -32,18 +34,18 @@ public class SucheFormServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    //Diese Methode wird verwendet um den Nutzer bestimmte Kategorien anzuzeigen
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		//Kategorie wird uebergeben
 		String kategorie = request.getParameter("kategorie");
 		
 		//Alle hoerbuecher mit uebergebener Kategorie
-		String kategorieQuery = "SELECT artikelname, kategorie, preis  FROM hoerbuecher WHERE kategorie ILIKE ?";
+		String kategorieQuery = "SELECT artikelname, kategorie, preis  FROM hoerbuecher WHERE kategorie = ?";
 
 		Connection connection = DatabaseConnection.getConnection();
 		
 		try {
-			
 			PreparedStatement kategorieStatement = connection.prepareStatement(kategorieQuery);
 			kategorieStatement.setString(1, kategorie);
 			kategorieStatement.executeQuery();
@@ -73,36 +75,49 @@ public class SucheFormServlet extends HttpServlet {
 
 			request.getRequestDispatcher("seite2.jsp").forward(request, response);
 			
+			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			
 		}
-		
-		
-//		String suche = request.getParameter("suche");
-//		
-//		String query = "SELECT artikelname FROM hoerbuecher "
-//				+ "WHERE artikelname ILIKE %" + suche +"%";
-//		
-//		Connection connection = DatabaseConnection.getConnection();
-//		
-//		try {
-//			PreparedStatement statement = connection.prepareStatement(query);
-//			statement.execute();
-//			
-//			
-//			
-//			connection.close();
-//		} 
-//		catch (SQLException e) {
-//			e.printStackTrace();			
-//		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	//Diese Methode wird verwendet um dem Nutzer/Besucher beim Nutzen der Suchfunktion die Ergebnisse anzuzeigen
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		String suche = request.getParameter("suche");
+		
+		String suchQuery = "SELECT artikelname, kategorie, preis FROM hoerbuecher WHERE artikelname ILIKE %" + suche +"%";
+		
+		Connection connection = DatabaseConnection.getConnection();
+		
+		try {
+			PreparedStatement suchStatement = connection.prepareStatement(suchQuery);
+			suchStatement.setString(1, suche);
+			suchStatement.execute();
+			
+			ResultSet srs = suchStatement.executeQuery();
+			
+			ArrayList<String[]> results = new ArrayList<String[]>();
+			
+			while (srs.next()) {
+				
+				// Für jedes next() wird das Ergebnis zwischengespeichert
+				String[] s = { srs.getString(1), srs.getString(2), krs.getString(3), korb, bewertung, };
+				// Alle zwischengespeicherten Ergebnisse letztenendes in die Liste einfügen
+				results.add(s);
+			}
+			// Spaltennamen und Liste weitersenden
+			request.setAttribute("columnNames", new String[] { "Artikel", "Kategorie", "Preis"});
+			request.setAttribute("resultList", results);
+
+			request.getRequestDispatcher("seite2.jsp").forward(request, response);
+			connection.close();
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();			
+		}
 	}
 }

@@ -1,5 +1,12 @@
+/* -- @author Jan Schaffland -- */
+
 @CHARSET "ISO-8859-1";
 
+body {
+	background-image: url(bilder/bild8.jpg);
+	
+	}
+	
  #wrapper {
 	       width:900px;
 	       margin: 0 auto;

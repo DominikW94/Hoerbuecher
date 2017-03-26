@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<meta name="author" content="Tobias Brakel">
+	<meta name="author" content="Jan Schaffland">
 	<link href="profilStyle.css" type="text/css" rel="stylesheet">
 	<title>Account Bearbeitung</title>
 </head>
@@ -63,7 +63,7 @@
 	</span>
 	<br>
 	<br>
-		<a href="indexAnmeldung.jsp">Zur Startseite</a>
+		<a href="index.jsp">Zur Startseite</a>
 	</div>
 	</div>
 </body>
