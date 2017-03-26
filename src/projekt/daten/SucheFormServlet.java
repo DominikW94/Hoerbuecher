@@ -89,23 +89,24 @@ public class SucheFormServlet extends HttpServlet {
 
 		String suche = request.getParameter("suche");
 		
-		String suchQuery = "SELECT artikelname, kategorie, preis FROM hoerbuecher WHERE artikelname ILIKE %" + suche +"%";
+		String suchQuery = "SELECT artikelname, kategorie, preis FROM hoerbuecher WHERE artikelname ILIKE ?";
 		
 		Connection connection = DatabaseConnection.getConnection();
 		
 		try {
+			//Statement um die Suchanfrage zu bearbeiten. Ergebnisse mit dem eingegebenen Inhalt werden ausgegeben
 			PreparedStatement suchStatement = connection.prepareStatement(suchQuery);
-			suchStatement.setString(1, suche);
+			suchStatement.setString(1, "%" + suche + "%");
 			suchStatement.execute();
 			
+			//Ausgabe mit ResultSet ermitteln
 			ResultSet srs = suchStatement.executeQuery();
 			
 			ArrayList<String[]> results = new ArrayList<String[]>();
 			
 			while (srs.next()) {
-				
 				// Für jedes next() wird das Ergebnis zwischengespeichert
-				String[] s = { srs.getString(1), srs.getString(2), krs.getString(3), korb, bewertung, };
+				String[] s = { srs.getString(1), srs.getString(2), srs.getString(3), };
 				// Alle zwischengespeicherten Ergebnisse letztenendes in die Liste einfügen
 				results.add(s);
 			}

@@ -53,7 +53,7 @@
 </body>
 <footer>
 	<div align="left">
-		<a href="indexAnmeldung.jsp">Zur Startseite</a>
+		<a href="index.jsp">Zur Startseite</a>
 	</div>
 	<seitenTag:activeLink active="Seite2"></seitenTag:activeLink>
 </footer>
