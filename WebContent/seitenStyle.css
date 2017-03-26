@@ -1,0 +1,26 @@
+@CHARSET "ISO-8859-1";
+
+a 		{color: green;
+		 text-decoration: none;}
+
+a#not 	{color: black; 
+		 text-decoration: none;}
+a#act	{color: red;
+		 text-decoration: none;}
+
+a#not:hover, a#act:hover, a:hover	
+		{text-decoration: underline;}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	height: 50px;
+	text-align: center;
+	width: 100%;}
+	
+body {
+	background-image: url(bilder/hoerbuch.jpg);
+	background-repeat: no-repeat;
+	background-position: top;}
+
+span { margin-right: 3em;}

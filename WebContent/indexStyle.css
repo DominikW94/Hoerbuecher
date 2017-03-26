@@ -1,0 +1,52 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	margin:0;
+	padding:0;
+    background-color: #c0c0c0;
+    background-image: url(bilder/bild2.jpg);
+    backround-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+h1 {
+	text-align: center;
+	color: white;
+	font-wheight:bold;
+}
+
+a:link, a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+#header {
+	padding:10px;
+	background-color: #003555;
+}
+
+.right {
+	display: inline-block;
+	float: right;
+}
+
+.menu {
+    color:black;
+    display:inline-block;
+    margin:0;
+    padding:0;
+    height: 40px;
+}
+
+.menu li {
+	display:inline;
+	list-style:none;
+	padding:6px 8px;
+}
+
+.menu li:hover {
+    background-color:grey;
+}
+
+span { margin-right: 3em;}
